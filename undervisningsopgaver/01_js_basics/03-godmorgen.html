@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        let tid = new Date().getHours();
+
+        if (tid < 10) {
+            console.log('Godmorgen');
+        } else if (tid > 10) {
+            console.log('Goddag');
+        } else if (tid > 18) {
+            console.log('Godaften');
+        } else if (tid < 5) {
+            console.log('Godnat');
+        }
+
+    </script>
+</body>
+
+</html>
