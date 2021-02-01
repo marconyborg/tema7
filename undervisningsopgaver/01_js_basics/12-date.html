@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Må han/hun dates, eller er vedkommende for ung?</h1>
+    <p>Indtast oplysninger herunder, og få svar ud fra den ældeste regl i spillet</p>
+    <br>
+    <p>Din alder</p>
+    <input type="text" id="dig">
+    <p>Hans/hendes alder</p>
+    <input type="text" id="dem">
+    <button>Submit</button>
+    <script>
+        document.querySelector('button').addEventListener('click', clickedButton);
+
+        function clickedButton() {
+
+            let dig = document.querySelector('#dig').value;
+            let dem = document.querySelector('#dem').value;
+
+            if (dem < 15 || dig < 15) {
+                console.log('Alderen er ikke buksemyndig. FBI OPEN UP!!!!');
+            } else if (dig / 2 + 7 <= dem) {
+                console.log('I er good to go, husk gummi');
+            } else {
+                console.log('Den er ikke helt god vel, men skal nok lade værre og sladre. Huskede du at skrive CPR nr også?');
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
