@@ -15,14 +15,16 @@
     <button>placer bud</button>
     <script>
         let rand = Math.round(Math.random() * 20);
+        let antal = 0;
 
         document.querySelector('button').addEventListener('click', clickedButton);
 
         function clickedButton() {
+            antal++;
             let gæt = document.querySelector('#gæt').value;
 
             if (rand == gæt) {
-                console.log(`Tillykke det var rigtigt! Tallet var nemlig ${gæt}`);
+                console.log(`Tillykke det var rigtigt! Tallet var nemlig ${gæt} du har brugt ${antal} gæt`);
             } else if (rand > gæt) {
                 console.log(`Desværre, tallet er højere end ${gæt}. Prøv igen!`);
             } else if (rand < gæt) {
