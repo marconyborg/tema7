@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 1</title>
+    <style>
+        header {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        footer {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 300px);
+            grid-gap: 10px;
+            margin-bottom: 5px;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="placeimg_300_300_nature%20(1).jpg" alt="placeholder">
+                <h3>Articel 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa in, non consequatur velit delectus natus dolorem expedita maiores. Voluptates eum soluta, numquam et eligendi nobis quasi est obcaecati distinctio voluptate?</p>
+            </article>
+            <article id="artikel2">
+                <img src="placeimg_300_300_nature.jpg" alt="placeholder">
+                <h3>Articel 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam blanditiis, et. Laboriosam sunt non sit fuga laborum odit iure ad, nisi labore incidunt deserunt voluptate corporis, quis tempora, magni tenetur?</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h1>This is the footer</h1>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("Dom er loaded");
+
+            document.querySelector('article img').addEventListener('click', skiftBillede);
+
+            function skiftBillede() {
+                console.log("billede skiftes");
+
+                const articleImg = document.querySelector('article img');
+
+                articleImg.src = "billede3.jpg";
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
