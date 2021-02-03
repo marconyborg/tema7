@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #knap {
+            flex-direction: row-reverse;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Slideshow</h1>
+        <div class="pics">
+            <img src="img1.png" alt="img1">
+        </div>
+        <div>
+            <button>Næste</button>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", start);
+
+            function start() {
+                const kategorier = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"]
+                const billeder = document.querySelector('.pics img');
+                let imageIndex = 1;
+
+                document.querySelector('button').addEventListener('click', skiftBillede);
+
+                function skiftBillede() {
+                    billeder.src = kategorier[imageIndex];
+                    imageIndex++;
+
+                    if (imageIndex > 7) {
+                        imageIndex = 0;
+                        document.querySelector('button').textContent = "Forfra";
+                    } else {
+                        document.querySelector('button').textContent = "Næste";
+                    }
+
+                }
+            }
+
+        </script>
+    </main>
+</body>
+
+</html>
