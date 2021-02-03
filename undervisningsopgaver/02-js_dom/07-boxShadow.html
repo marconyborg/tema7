@@ -28,6 +28,14 @@
             justify-content: center;
         }
 
+        .skygge {
+            box-shadow: 0px 3px 19px 12px rgba(5, 10, 255, 1);
+        }
+
+        .fjernskygge {
+            box-shadow: none;
+        }
+
     </style>
 </head>
 
@@ -38,12 +46,12 @@
     <main>
         <h2>Undertitel</h2>
         <section>
-            <article>
+            <article class="article">
                 <img src="placeimg_300_300_nature%20(1).jpg" alt="placeholder">
                 <h3>Articel 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa in, non consequatur velit delectus natus dolorem expedita maiores. Voluptates eum soluta, numquam et eligendi nobis quasi est obcaecati distinctio voluptate?</p>
             </article>
-            <article id="artikel2">
+            <article class="article">
                 <img src="placeimg_300_300_nature.jpg" alt="placeholder">
                 <h3>Articel 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam blanditiis, et. Laboriosam sunt non sit fuga laborum odit iure ad, nisi labore incidunt deserunt voluptate corporis, quis tempora, magni tenetur?</p>
@@ -57,18 +65,19 @@
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            const article = document.querySelector('article');
+            const article = document.querySelectorAll('.article');
+            article.forEach(article => article.addEventListener('mouseover', addShadow));
+            article.forEach(article => article.addEventListener('mouseout', removeShadow));
 
-            article.addEventListener('mouseover', addShadow);
-            article.addEventListener('mouseout', removeShadow);
 
             function addShadow() {
-                console.log('virker');
-                article.style.boxShadow = "0px 3px 19px 12px rgba(5,10,255,1)";
+                this.classList.toggle('skygge');
+                //this.removeEventListener('mouseover', addShadow);
             }
 
             function removeShadow() {
-                article.style.boxShadow = "none";
+                this.classList.toggle('fjernskygge');
+                //this.removeEventListener('mouseout', removeShadow);
             }
 
             console.log("Dom er loaded");
