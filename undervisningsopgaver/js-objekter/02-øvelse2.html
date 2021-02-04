@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section></section>
+    <template>
+        <article>
+            <h2></h2>
+            <p class="årgang">Årgang :</p>
+            <p class="geartype">Geartype :</p>
+            <p>Udstyr :</p>
+            <ul></ul>
+        </article>
+    </template>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            const container = document.querySelector("section");
+            const temp = document.querySelector("template");
+
+            const fil = "mineBiler.json";
+
+            async function hentdata(fil) {
+                const result = await fetch(fil);
+                const json = await result.json();
+                vis(json);
+            }
+
+            function vis(biler) {
+                biler.forEach(bil => {
+                    let klon = temp.cloneNode(true).content;
+                    klon.querySelector("h2").textContent = bil.navn;
+                    klon.querySelector(".årgang").textContent = bil.årgang;
+                    klon.querySelector(".geartype").textContent = bil.geartype;
+
+                    bil.udstyr.forEach(udstyr => {
+                        klon.querySelector("ul").innerHTML += "<li>" + udstyr + "</li>"
+                    })
+
+                    container.appendChild(klon);
+
+                })
+            }
+            hentdata(fil);
+        }
+
+    </script>
+</body>
+
+</html>

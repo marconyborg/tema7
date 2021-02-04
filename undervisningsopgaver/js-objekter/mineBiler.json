@@ -1,0 +1,20 @@
+[
+    {
+        "navn": "Volkswagen Golf",
+        "årgang": "2019",
+        "geartype": "automat",
+        "udstyr": ["sædevarme", "tonede ruder", "bakkamera"]
+    },
+    {
+        "navn": "Hyundai i20",
+        "årgang": "2018",
+        "geartype": "manuelt",
+        "udstyr": ["ratvarme", "elektriske ruder", "bakkamera"]
+    },
+    {
+        "navn": "Maclaren P1",
+        "årgang": "2020",
+        "geartype": "automat",
+        "udstyr": ["Sygt hurtig", "Damemagnet", "fiktiv"]
+    }
+]
