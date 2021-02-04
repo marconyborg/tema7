@@ -5,17 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="">
+    <style>
+        article {
+            border: 1px solid black;
+        }
+
+    </style>
 </head>
 
 <body>
-    <article id="dyret">
-        <p id="gris"></p>
-        <p id="frø"></p>
-        <p id="ræv"></p>
-        <p id="sild"></p>
-        <p id="kroko"></p>
-    </article>
+    <section>
+        <template>
+            <article id="dyr">
+                <h3></h3>
+                <img src="" alt="">
+                <p id="type">Type: </p>
+                <p id="levested">Levested: </p>
+            </article>
+        </template>
+    </section>
     <script>
         document.addEventListener("DOMContentLoaded", start);
 
@@ -54,13 +62,17 @@
 
             console.log(dyr);
 
-            const article = document.querySelector("#dyret");
+            const container = document.querySelector("section");
+            const dyrTemplate = document.querySelector("template");
 
-            article.querySelector("#gris").textContent = `${dyr[0].navn} ${dyr[0].type} ${dyr[0].levested}`;
-            article.querySelector("#frø").textContent = `${dyr[1].navn} ${dyr[1].type} ${dyr[1].levested}`;
-            article.querySelector("#ræv").textContent = `${dyr[2].navn} ${dyr[2].type} ${dyr[2].levested}`;
-            article.querySelector("#sild").textContent = `${dyr[3].navn} ${dyr[3].type} ${dyr[3].levested}`;
-            article.querySelector("#kroko").textContent = `${dyr[4].navn} ${dyr[4].type} ${dyr[4].levested}`;
+            dyr.forEach(dyr => {
+                let klon = dyrTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = dyr.navn;
+                klon.querySelector("img").src = dyr.billede;
+                klon.querySelector("#type").textContent = dyr.type;
+                klon.querySelector("#levested").textContent = dyr.levested;
+                container.appendChild(klon);
+            })
 
 
         }
