@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <article id="dyret">
+        <p id="gris"></p>
+        <p id="frø"></p>
+        <p id="ræv"></p>
+        <p id="sild"></p>
+        <p id="kroko"></p>
+    </article>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dyr = [{
+                    "navn": "gris",
+                    "type": "pattedyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                    "levested": "svinefarme"
+                },
+                {
+                    "navn": "frø",
+                    "type": "amfibie",
+                    "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+                    "levested": "sump"
+                },
+                {
+                    "navn": "ræv",
+                    "type": "pattedyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                    "levested": "skov"
+                },
+                {
+                    "navn": "sild",
+                    "type": "fisk",
+                    "billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+                    "levested": "hav"
+                },
+                {
+                    "navn": "krokodille",
+                    "type": "krybdyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+                    "levested": "florida"
+                }
+            ]
+
+            console.log(dyr);
+
+            const article = document.querySelector("#dyret");
+
+            article.querySelector("#gris").textContent = `${dyr[0].navn} ${dyr[0].type} ${dyr[0].levested}`;
+            article.querySelector("#frø").textContent = `${dyr[1].navn} ${dyr[1].type} ${dyr[1].levested}`;
+            article.querySelector("#ræv").textContent = `${dyr[2].navn} ${dyr[2].type} ${dyr[2].levested}`;
+            article.querySelector("#sild").textContent = `${dyr[3].navn} ${dyr[3].type} ${dyr[3].levested}`;
+            article.querySelector("#kroko").textContent = `${dyr[4].navn} ${dyr[4].type} ${dyr[4].levested}`;
+
+        }
+
+    </script>
+</body>
+
+</html>
