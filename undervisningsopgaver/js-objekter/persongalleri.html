@@ -63,7 +63,7 @@
             function vis(person) {
                 person.forEach(person => {
                     let klon = temp.cloneNode(true).content;
-                    klon.querySelector(".navn").textContent = `${person.fornavn} + ${person.efternavn}`;
+                    klon.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
                     klon.querySelector(".titel").textContent = person.titel;
                     klon.querySelector(".fødselsdag").textContent = person.fødselsdag;
                     klon.querySelector(".billede").src = medieUrl + person.billede;
