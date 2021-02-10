@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro Babuskha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="splash">
+        <img src="bistro-logo-01.svg" alt="logo">
+        <img src="bistro-splash-02.svg" alt="splash">
+    </div>
+    <header>
+        <h1>Alle</h1>
+    </header>
+    <nav>
+        <button data-kategori="alle" class="valgt">Alle</button>
+        <button data-kategori="forretter">Forretter</button>
+        <button data-kategori="hovedretter">Hovedretter</button>
+        <button data-kategori="desserter">Desserter</button>
+        <button data-kategori="sideorders">Sideorders</button>
+        <button data-kategori="drikkevarer">Drikkevarer</button>
+    </nav>
+    <section id="liste"></section>
+
+    <template>
+        <article class="ret">
+            <h2 class="navn"></h2>
+            <img src="" alt="" class="billede">
+            <p class="pris"></p>
+            <p class="beskrivelse"></p>
+            <p class="oprindelse"></p>
+            <div class="vismere">vis mere..</div>
+        </article>
+    </template>
+    <footer>
+        <p class="adressefooter">Adresse: <br> Grønnegade 97 <br> 1234 København</p>
+        <p class="åbningstidfooter">Åbningstider: <br> Mandag - Fredag 10:30-22.00 <br> Lørdag 12:00-23:00</p>
+    </footer>
+    <script src="script.js"></script>
+</body></html>
